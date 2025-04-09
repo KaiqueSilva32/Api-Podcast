@@ -5,6 +5,8 @@ const episodiosSchema = new mongoose.Schema({
   convidado: String,
   numeroEp: String,
   sobreConvidado: String,
+  audio: Boolean,
+  video: Boolean
 });
 
 const podcastSchema = new mongoose.Schema({

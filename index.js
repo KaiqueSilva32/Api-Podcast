@@ -1,5 +1,5 @@
 import express from "express";
-import mongoose from "./config/db-connection.js";
+import mongoose from "./config/db-connection.js"
 import Podcast from "./models/Podcast.js"
 const app = express();
 
@@ -13,7 +13,7 @@ app.use('/', podcastRoutes)
 
 
 // Iniciando a conexão com o banco de dados do MongoDB
-mongoose.connect("mongodb://127.0.0.1:27017/api-podcast")
+// mongoose.connect("mongodb://127.0.0.1:27017/api-podcast")
 
 // Iniciando o servidor
 const port = 4000;

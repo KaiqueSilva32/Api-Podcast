@@ -1,20 +1,19 @@
 import mongoose from "mongoose";
 
-const dbUser = "silvakaique7934";
+const dbUser = "kaique_silva";
+const pass = "1vWfOIiVX72mbgV3";
 
-const dbPassword = "1okR54GvvKQdGl1V";
-
-const connect = () => {
-  mongoose.connect(
-    `mongodb+srv://kaki:<db_password>@kaiquesilva.aauiy.mongodb.net/?retryWrites=true&w=majority&appName=KaiqueSilva`
-  );
-  const connection = mongoose.connection;
-  connection.on("error", () => {
-    console.log("Erro ao conectar com o mongoDB");
-  });
-  connection.on("open", () => {
-    console.log("Conectado ao mongoDB com sucesso");
-  });
+const connect = async () => {
+  try {
+    await mongoose.connect(
+      `mongodb+srv://${dbUser}:${encodeURIComponent(pass)}@cluster-podcast.gukzrqf.mongodb.net/api-podcast?retryWrites=true&w=majority&appName=Cluster-Podcast`
+    );
+    console.log("Conectado ao mongoDB com sucesso!");
+  } catch (error) {
+    console.error("Erro ao conectar com o mongoDB:", error);
+  }
 };
+
 connect();
+
 export default mongoose;
